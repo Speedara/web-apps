@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.boss{
+    background-color: rgb(235, 235, 235);
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 0;
+    
+}
+
+.search-input{
+    margin-top: -20px;
+    text-align: right;
+    
+}
+
+.search-bar{
+    height: 25px;
+    width: 30%;
+    border-radius: 20px;
+    border: 1px solid lightgray;
+    padding: 0 20px;  
+    background-image: url(https://storage.googleapis.com/helpdocs-assets/qi4t4b57ke/articles/p3b7ibrxks/1553521623380/bypass-search.jpg);
+    background-repeat: no-repeat;  
+    outline: none;
+}
+
+.search-area{
+    padding: 0 10px;
+}
+
+h2, h3{
+font-family: Arial, Helvetica, sans-serif;
+
+}
+
+a{
+    text-decoration: none;
+    color: black;
+
+}
+a:visited{
+    text-decoration: none;
+    color: black;
+}
+
+.user{
+    display: inline-block;
+    width: 32%;
+    padding: 10px 5px 5px 5px;
+    background-color: #ccc;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 4px;
+    border-radius: 20px;
+}
+
+.user img{
+    width: 95%;
+    border: solid 3px white;
+    border-radius: 20px;
+    margin: 5px;
+}

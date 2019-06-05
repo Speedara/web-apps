@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie festival</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <br>
+    <h1>Movie List</h1>
+    <br>
+    <form>
+        <fieldset class="movie">
+            <p>Movie</p>
+
+            <fieldset>
+                <label>Title</label>
+                <input type="text" name="title" class="title" placeholder="Title" required="">
+
+                <label>Length (min)</label>
+                <input type="number" name="length" class="length" min="0" placeholder="Length in min" required="">
+
+                <select name="genre" class="genre">
+                    <option value="">-</option>
+                    <option value="drama">Drama</option>
+                    <option value="action">Action</option>
+                    <option value="horror">Horor</option>
+                    <option value="commedy">Commedy</option>
+                    <option value="adventure">Adventure</option>
+                </select>
+
+                <div class="movie-error">
+
+                </div>
+
+                <input type="button" name="add movie" class="add-movie" value="ADD MOVIE">
+
+                <div class="movie-list">
+                    <ul>
+
+
+                    </ul>
+                </div>
+
+            </fieldset>
+            <div class="total-movie-length">
+
+            </div>
+
+            <script src="./js/data.js"></script>
+            <script src="./js/ui.js"></script>
+            <script src="./js/ctrl.js"></script>
+            <script>
+                window.addEventListener('DOMContentLoaded', (event) => {
+                    console.log('DOM fully loaded and parsed');
+                    var ui = uiModule;
+                    console.log(ui);
+
+                    controllerModule.init();
+                });
+            </script>
+        </fieldset>
+    </form>
+
+
+</body>
+
+</html>
