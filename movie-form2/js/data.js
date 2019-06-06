@@ -23,7 +23,6 @@ const dataModule = (function () {
 		}
 	}
 
-
 	function createMovie(title, length, genre) {
 		return new Movie(title, length, genre);
 	}

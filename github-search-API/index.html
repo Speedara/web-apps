@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- <https://api.github.com/user/repos?page=3&per_page=100>; rel="next",<https://api.github.com/user/repos?page=50&per_page=100>; rel="last" -->
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="container">
+        <h1>GitHubSearcher</h1>
+        <div>
+            <input id="input" type="search" value="" name="q" placeholder="Search for user">
+            <input id="search" type="submit" value="SEND">
+        </div>
+    </header>
+
+    <div class="container root">
+
+    </div>
+
+
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+    <!-- JS -->
+
+    <script type="module">
+        import * as ctrl from "./js/ctrl.js";
+        window.addEventListener('DOMContentLoaded', (event) => {
+            console.log('DOM fully loaded and parsed');
+            ctrl.init();
+        });
+    </script>
+</body>
+
+</html>
