@@ -12,8 +12,8 @@ class User {
     setFullName() {
         return this.name + " " + this.last
     }
-    // setDate() {
-    //     return new Date(this.date);
-    // }
+    setDate() {
+        return this.date.slice(0, 10)
+    }
 }
 export { User }

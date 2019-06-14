@@ -12,9 +12,9 @@ const UserLists = (props) => {
                 <img src={oneUser.img} />
                 <div>
                     <p>{oneUser.setFullName()}</p>
-                    <i className="fa fa-envelope" aria-hidden="true">{oneUser.hideEmail()}</i>
+                    <i className="fa fa-envelope" aria-hidden="true">Email {oneUser.hideEmail()}</i>
                     <p>
-                        <i className="fa fa-birthday-cake" aria-hidden="true">{oneUser.date}</i>
+                        <i className="fa fa-birthday-cake" aria-hidden="true">  {oneUser.setDate()}</i>
                     </p>
                 </div>
             </div>
