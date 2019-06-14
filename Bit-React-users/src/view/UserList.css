@@ -1,23 +1,8 @@
-#root {
-  margin: 0 auto;
-}
-header {
-  background-color: rgb(233, 68, 145);
-  width: 80%;
-  border-radius: 5px;
-  margin: 10px;
-  margin: 0 auto;
-}
-button {
-  padding: 5px;
-  margin-left: 10px;
-}
 .user {
-  background-color: rgb(235, 182, 207);
   width: 80%;
   margin: 0 auto;
   display: flex;
-  border: 1px solid black;
+  border: 1px solid rgb(236, 232, 232);
 }
 
 .user div {
@@ -28,8 +13,8 @@ button {
   border-radius: 50%;
   margin-top: 15px;
   margin-left: 15px;
-  height: 100px;
-  width: 100px;
+  height: 65px;
+  width: 65px;
 }
 
 footer {
