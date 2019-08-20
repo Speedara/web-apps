@@ -1,4 +1,4 @@
-import { User } from '../enitities/User';
+import { User } from '../entities/User';
 import axios from 'axios';
 
 const fetchUsers = () => {
