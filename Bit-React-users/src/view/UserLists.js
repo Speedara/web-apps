@@ -2,7 +2,6 @@ import React from 'react';
 import './UserList.css'
 
 const UserLists = (props) => {
-    console.log(props.users)
 
     const arrOfUsers = props.users.map((oneUser, i) => {
         return (
@@ -17,10 +16,8 @@ const UserLists = (props) => {
                     </p>
                 </div>
             </div>
-
         )
     })
-
     return arrOfUsers;
 }
 export default UserLists;

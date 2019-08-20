@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 import Header from './Header'
 import UserLists from './UserLists'
 import Footer from './Footer'
-import fetchUsers from '../shared/services/userService';
-import GridStructure from './GridStructure';
+import fetchUsers from '../shared/services/userService'
+import GridStructure from './GridStructure'
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +11,6 @@ class App extends React.Component {
     this.state = {
       users: [],
       isGrid: false,
-
     }
   }
 
@@ -24,7 +23,7 @@ class App extends React.Component {
       .then(users => this.setState({ users }))
   )
 
-  ChangingState = (e) => {
+  ChangingState = () => {
 
     this.setState((prevState) => {
       return {
@@ -35,7 +34,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <Header GridOrList={this.state.isGrid} onClickEvent={this.ChangingState} onReload={this.fetchAndSaveUsers} />
         <div className="wrapper container">
           {
@@ -45,7 +44,7 @@ class App extends React.Component {
           }
         </div >
         <Footer />
-      </React.Fragment >
+      </>
     )
   }
 }

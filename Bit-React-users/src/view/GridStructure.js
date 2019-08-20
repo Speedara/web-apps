@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react'
 import './GridStructure.css'
 
 const GridStructure = (props) => {

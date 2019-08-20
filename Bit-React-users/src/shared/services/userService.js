@@ -8,12 +8,10 @@ const fetchUsers = () => {
         .then((response) => response.data)
         .then((data) => {
             const apiUsers = data.results;
-            console.log(apiUsers);
 
             const users = apiUsers.map((user) => {
                 return new User(user.name.first, user.name.last, user.email, user.picture.large, user.dob.date)
             })
-            console.log(users);
 
             return users;
         })

@@ -1,9 +1,7 @@
-import React from 'react';
-import './Header.css';
-import fetchUsers from '../shared/services/userService';
+import React from 'react'
+import './Header.css'
 
 const Header = (props) => {
-    // console.log(fetchUsers);
 
     return (
         <header className="header">
