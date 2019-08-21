@@ -5,8 +5,8 @@ const GridStructure = (props) => {
 
     const arrOfUsers = props.users.map((oneUser, i) => {
         return (
-            <div className="userGrid" key={i}>
-                <img src={oneUser.img} alt="whops"/>
+            < div className="userGrid" key={i} style={oneUser.isFemale()}>
+                <img src={oneUser.img} alt="whops" />
                 <div>
                     <p className="usernameGrid">{oneUser.setFullName()}</p>
                     <p className="emailGrid">{oneUser.hideEmail()}</p>
@@ -14,8 +14,7 @@ const GridStructure = (props) => {
                         Birth date {oneUser.setDate()}
                     </p>
                 </div>
-            </div>
-
+            </div >
         )
     })
 

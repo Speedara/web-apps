@@ -1,10 +1,11 @@
 class User {
-    constructor(name, last, email, img, date) {
+    constructor(name, last, email, img, date, gender) {
         this.name = name;
         this.last = last;
         this.email = email;
         this.img = img;
         this.date = date;
+        this.gender = gender;
     }
     hideEmail() {
         return this.email.slice(0, 3) + "..." + this.email.slice(6, 26)
@@ -14,6 +15,9 @@ class User {
     }
     setDate() {
         return this.date.slice(0, 10)
+    }
+    isFemale() {
+        return this.gender === "female" ? { "backgroundColor": "#ec6f75" } : null
     }
 }
 export { User }
