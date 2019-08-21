@@ -1,3 +1,30 @@
 #root {
   margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
+}
+
+.searchBar {
+  padding-bottom: 5px;
+}
+
+.searchBar a {
+  position: relative;
+  color: black;
+}
+
+.searchBar input {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  border: none;
+  border-bottom: 1px solid rgb(236, 232, 232);
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+.searchBar .fas {
+  position: absolute;
+  left: 116px;
+  top: 8px;
 }

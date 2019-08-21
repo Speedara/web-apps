@@ -1,16 +1,17 @@
 import React from 'react'
-import Header from './Header'
-import UserLists from './UserLists'
-import Footer from './Footer'
+import Header from './header/Header'
+import UserLists from './userList/UserLists'
+import Footer from './footer/Footer'
 import fetchUsers from '../shared/services/userService'
-import GridStructure from './GridStructure'
+import GridStructure from './gridStructure/GridStructure'
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       users: [],
-      isGrid: false
+      isGrid: false,
+      searchBar: ""
     }
   }
 
@@ -33,19 +34,33 @@ class App extends React.Component {
     })
   }
 
+  SearchBar = (e) => {
+    let q = e.target.value;
+    this.setState({ searchBar: q })
+
+  }
+
   render() {
 
     return (
       <>
         <Header GridOrList={this.state.isGrid} onClickEvent={this.ChangingState} onReload={this.fetchAndSaveUsers} />
         <div className="wrapper container">
+          {/* Search-bar */}
+          <div className="searchBar">
+            <a href="#">
+              <i className="fas fa-search"></i>
+            </a>
+            <input type="search" placeholder="Search users" name="q" value={this.state.searchBar} onChange={this.SearchBar} />
+          </div>
+
           {
             JSON.parse(localStorage.getItem("isGrid")) ?
-              <GridStructure users={this.state.users} /> :
-              <UserLists users={this.state.users} />
+              <GridStructure users={this.state.users} query={this.state.searchBar} /> :
+              <UserLists users={this.state.users} query={this.state.searchBar} />
           }
         </div >
-        <Footer />
+        <Footer stayBottom={this.state.searchBar} />
       </>
     )
   }

@@ -2,6 +2,7 @@ button {
   padding: 5px;
   margin-left: 10px;
 }
+
 .userGrid {
   height: 60%;
   margin: 20px auto;
@@ -30,4 +31,3 @@ button {
 .emailGrid {
   margin-bottom: 0;
 }
-
