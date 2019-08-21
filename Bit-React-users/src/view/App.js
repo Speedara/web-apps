@@ -10,12 +10,13 @@ class App extends React.Component {
     super(props);
     this.state = {
       users: [],
-      isGrid: false,
+      isGrid: false
     }
   }
 
   componentDidMount() {
     this.fetchAndSaveUsers();
+    this.setState({ isGrid: localStorage.isGrid })
   }
 
   fetchAndSaveUsers = () => (
@@ -24,7 +25,7 @@ class App extends React.Component {
   )
 
   ChangingState = () => {
-
+    localStorage.setItem("isGrid", !this.state.isGrid)
     this.setState((prevState) => {
       return {
         isGrid: !prevState.isGrid
@@ -32,17 +33,16 @@ class App extends React.Component {
     })
   }
 
-
-
   render() {
+
     return (
       <>
         <Header GridOrList={this.state.isGrid} onClickEvent={this.ChangingState} onReload={this.fetchAndSaveUsers} />
         <div className="wrapper container">
           {
-            this.state.isGrid
-              ? <GridStructure users={this.state.users} />
-              : <UserLists users={this.state.users} />
+            JSON.parse(localStorage.getItem("isGrid")) ?
+              <GridStructure users={this.state.users} /> :
+              <UserLists users={this.state.users} />
           }
         </div >
         <Footer />

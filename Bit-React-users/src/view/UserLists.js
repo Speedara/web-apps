@@ -7,7 +7,7 @@ const UserLists = (props) => {
         return (
 
             <div className="user" key={i}>
-                <img src={oneUser.img} />
+                <img src={oneUser.img} alt="whops" />
                 <div>
                     <p>{oneUser.setFullName()}</p>
                     <i className="fa fa-envelope" aria-hidden="true">   email: {oneUser.hideEmail()}</i>
