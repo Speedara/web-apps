@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchAndSaveUsers();
+    this.fetchAndSaveUsers()
     this.setState({ isGrid: localStorage.isGrid })
   }
 
@@ -42,11 +42,31 @@ class App extends React.Component {
 
   render() {
 
+    //loading screen 
+    let loadingCube = {
+      display: (this.state.users.length === 0) ? "block" : "none"
+    }
+    let hidingSearchBarWhileLoadingScreenIsActive = {
+      display: (this.state.users.length === 0) ? "none" : "block"
+    }
+
     return (
       <>
         <Header GridOrList={this.state.isGrid} onClickEvent={this.ChangingState} onReload={this.fetchAndSaveUsers} />
-        <div className="wrapper container">
-          {/* Search-bar */}
+
+        <div className="sk-cube-grid" style={loadingCube}>
+          <div className="sk-cube sk-cube1"></div>
+          <div className="sk-cube sk-cube2"></div>
+          <div className="sk-cube sk-cube3"></div>
+          <div className="sk-cube sk-cube4"></div>
+          <div className="sk-cube sk-cube5"></div>
+          <div className="sk-cube sk-cube6"></div>
+          <div className="sk-cube sk-cube7"></div>
+          <div className="sk-cube sk-cube8"></div>
+          <div className="sk-cube sk-cube9"></div>
+        </div>
+
+        <div className="wrapper container" style={hidingSearchBarWhileLoadingScreenIsActive}>
           <div className="searchBar">
             <a href="#">
               <i className="fas fa-search"></i>
@@ -60,7 +80,7 @@ class App extends React.Component {
               <UserLists users={this.state.users} query={this.state.searchBar} />
           }
         </div >
-        <Footer stayBottom={this.state.searchBar} />
+        <Footer />
       </>
     )
   }
