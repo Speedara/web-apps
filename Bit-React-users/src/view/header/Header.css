@@ -8,14 +8,16 @@ header {
   color: white;
   position: relative;
 }
-header a {
-  text-decoration: none;
-  color: white;
+
+header span {
   position: absolute;
   top: 0;
   right: 20px;
-  font-size: 30px;
 }
-.refreshButton {
-  margin-right: 50px;
+
+header span a {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+  padding: 0 30px;
 }

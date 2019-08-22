@@ -4,6 +4,8 @@ import UserLists from './userList/UserLists'
 import Footer from './footer/Footer'
 import fetchUsers from '../shared/services/userService'
 import GridStructure from './gridStructure/GridStructure'
+import Animation from './loadingScreen/Animation'
+import About from './aboutPage/About'
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +13,8 @@ class App extends React.Component {
     this.state = {
       users: [],
       isGrid: false,
-      searchBar: ""
+      searchBar: "",
+      aboutPage: false
     }
   }
 
@@ -40,6 +43,16 @@ class App extends React.Component {
 
   }
 
+  AboutPage = () => {
+    return (
+      this.setState(prevState => {
+        return {
+          aboutPage: !prevState.aboutPage
+        }
+      })
+    )
+  }
+
   render() {
 
     //loading screen 
@@ -52,34 +65,25 @@ class App extends React.Component {
 
     return (
       <>
-        <Header GridOrList={this.state.isGrid} onClickEvent={this.ChangingState} onReload={this.fetchAndSaveUsers} />
-
-        <div className="sk-cube-grid" style={loadingCube}>
-          <div className="sk-cube sk-cube1"></div>
-          <div className="sk-cube sk-cube2"></div>
-          <div className="sk-cube sk-cube3"></div>
-          <div className="sk-cube sk-cube4"></div>
-          <div className="sk-cube sk-cube5"></div>
-          <div className="sk-cube sk-cube6"></div>
-          <div className="sk-cube sk-cube7"></div>
-          <div className="sk-cube sk-cube8"></div>
-          <div className="sk-cube sk-cube9"></div>
-        </div>
-
-        <div className="wrapper container" style={hidingSearchBarWhileLoadingScreenIsActive}>
-          <div className="searchBar">
-            <a href="#">
-              <i className="fas fa-search"></i>
-            </a>
-            <input type="search" placeholder="Search users" name="q" value={this.state.searchBar} onChange={this.SearchBar} />
-          </div>
-
-          {
-            JSON.parse(localStorage.getItem("isGrid")) ?
-              <GridStructure users={this.state.users} query={this.state.searchBar} /> :
-              <UserLists users={this.state.users} query={this.state.searchBar} />
-          }
-        </div >
+        <Header GridOrList={this.state.isGrid} onClickEvent={this.ChangingState} onReload={this.fetchAndSaveUsers} about={this.AboutPage} />
+        <Animation loadingCube={loadingCube} />
+        {
+          (this.state.aboutPage) ?
+            <About /> :
+            <div className="wrapper container" style={hidingSearchBarWhileLoadingScreenIsActive}>
+              <div className="searchBar">
+                <a href="#">
+                  <i className="fas fa-search"></i>
+                </a>
+                <input type="search" placeholder="Search users" name="q" value={this.state.searchBar} onChange={this.SearchBar} />
+              </div>
+              {
+                JSON.parse(localStorage.getItem("isGrid")) ?
+                  <GridStructure users={this.state.users} query={this.state.searchBar} /> :
+                  <UserLists users={this.state.users} query={this.state.searchBar} />
+              }
+            </div >
+        }
         <Footer />
       </>
     )
