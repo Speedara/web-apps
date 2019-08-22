@@ -40,7 +40,6 @@ class App extends React.Component {
   SearchBar = (e) => {
     let q = e.target.value;
     this.setState({ searchBar: q })
-
   }
 
   AboutPage = () => {

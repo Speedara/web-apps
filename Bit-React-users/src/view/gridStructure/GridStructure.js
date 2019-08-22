@@ -3,7 +3,7 @@ import './GridStructure.css'
 
 const GridStructure = (props) => {
     const arrOfUsers = props.users.map((oneUser, i) => {
-
+        // console.log(oneUser)
         return (
             (!props.query) ?
                 < div className="userGrid" style={oneUser.isFemale()}>
@@ -16,7 +16,7 @@ const GridStructure = (props) => {
                         </p>
                     </div>
                 </div > :
-                oneUser.name.startsWith(props.query) ?
+                (oneUser.name.startsWith(props.query.toLowerCase()) || oneUser.last.startsWith(props.query.toLowerCase())) ?
 
                     < div className="userGrid" style={oneUser.isFemale()}>
                         <img src={oneUser.img} alt="whops" />

@@ -16,7 +16,7 @@ const UserLists = (props) => {
                         </p>
                     </div>
                 </div> :
-                (oneUser.name.startsWith(props.query)) ?
+                (oneUser.name.startsWith(props.query.toLowerCase()) || oneUser.last.startsWith(props.query.toLowerCase())) ?
                     <div className="user" key={i} style={oneUser.isFemale()}>
                         <img src={oneUser.img} alt="whops" />
                         <div>
