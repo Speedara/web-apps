@@ -28,8 +28,9 @@ a:hover {
   padding: 5px;
 }
 
-.searchBar .fas {
-  position: absolute;
-  left: 116px;
-  top: 8px;
+.error-msg {
+  font-size: 2rem;
+  padding-top: 25px;
+  margin-top: 25px;
+  text-align: center;
 }

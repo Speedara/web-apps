@@ -52,6 +52,16 @@ class App extends React.Component {
     )
   }
 
+  ErrorMsg = () => {
+    return (
+      <div className="error-msg">
+        <i className="far fa-meh" ></i>
+        <br />
+        <p>We couldn't find any <br /> people matching your <br /> search</p>
+      </div>
+    )
+  }
+
   render() {
 
     //loading screen 
@@ -64,22 +74,19 @@ class App extends React.Component {
 
     return (
       <>
-        <Header GridOrList={this.state.isGrid} onClickEvent={this.ChangingState} onReload={this.fetchAndSaveUsers} about={this.AboutPage} />
+        <Header GridOrList={this.state.isGrid} onClickEvent={this.ChangingState} onReload={this.fetchAndSaveUsers} aboutChangingState={this.AboutPage} aboutState={this.state.aboutPage} />
         <Animation loadingCube={loadingCube} />
         {
           (this.state.aboutPage) ?
             <About /> :
             <div className="wrapper container" style={hidingSearchBarWhileLoadingScreenIsActive}>
               <div className="searchBar">
-                <a href="#">
-                  <i className="fas fa-search"></i>
-                </a>
                 <input type="search" placeholder="Search users" name="q" value={this.state.searchBar} onChange={this.SearchBar} />
               </div>
               {
                 JSON.parse(localStorage.getItem("isGrid")) ?
-                  <GridStructure users={this.state.users} query={this.state.searchBar} /> :
-                  <UserLists users={this.state.users} query={this.state.searchBar} />
+                  <GridStructure users={this.state.users} query={this.state.searchBar} error={this.ErrorMsg} /> :
+                  <UserLists users={this.state.users} query={this.state.searchBar} error={this.ErrorMsg} />
               }
             </div >
         }

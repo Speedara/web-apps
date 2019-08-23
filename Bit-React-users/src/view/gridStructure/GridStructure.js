@@ -28,10 +28,14 @@ const GridStructure = (props) => {
                             </p>
                         </div>
                     </div > :
-                    false
+                    null
         )
     })
-    return arrOfUsers;
+
+    //if array has 20 elements with null value, there is no match
+    const checked = arrOfUsers.filter(user => user === null)
+    return checked.length === 20 ? props.error() : arrOfUsers
+
 }
 
 export default GridStructure;

@@ -2,12 +2,12 @@ import React from 'react'
 import './Header.css'
 
 const Header = (props) => {
-
+    let switchingText = props.aboutState ? "Home" : "About"
     return (
         <header className="header">
             <h1>{"Bit Persons"}</h1>
             <span>
-                <a href="#" onClick={props.about}>About</a>
+                <a href="#" onClick={props.aboutChangingState}>{switchingText}</a>
                 <a onClick={props.onReload} className="refreshButton" href="#"><i className="fas fa-redo-alt"></i></a>
                 {
                     props.GridOrList
