@@ -4,6 +4,9 @@
   display: flex;
   border: 1px solid rgb(236, 232, 232);
 }
+.user:last-child {
+  margin-bottom: 40px;
+}
 
 .user div {
   padding-left: 25px;
