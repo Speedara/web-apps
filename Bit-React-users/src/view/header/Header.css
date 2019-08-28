@@ -1,23 +1,24 @@
 header {
-  background-color: #ec6f75;
-  width: 80%;
-  border-radius: 5px;
-  margin: 10px;
-  margin: 0 auto;
-  text-align: center;
-  color: white;
-  position: relative;
+    background-color: #ec6f75;
+    width: 80%;
+    border-radius: 5px;
+    margin: 10px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    position: relative;
+    height: 48px;
 }
 
 header span {
-  position: absolute;
-  top: 0;
-  right: 20px;
+    position: absolute;
+    top: 0;
+    right: 20px;
 }
 
 header span a {
-  text-decoration: none;
-  color: white;
-  font-size: 30px;
-  padding: 0 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    padding: 0 30px;
 }

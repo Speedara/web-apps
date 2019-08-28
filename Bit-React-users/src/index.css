@@ -1,36 +1,97 @@
 #root {
-  margin: 0 auto;
-  position: relative;
-  min-height: 100vh;
-  height: 100%;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100vh;
+    height: 100%;
 }
 
 a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .searchBar {
-  padding-bottom: 5px;
+    padding-bottom: 5px;
 }
 
 .searchBar a {
-  position: relative;
-  color: black;
+    position: relative;
+    color: black;
 }
 
 .searchBar input {
-  width: 70%;
-  margin: 0 auto;
-  display: flex;
-  border: none;
-  border-bottom: 1px solid rgb(236, 232, 232);
-  border-collapse: collapse;
-  padding: 5px;
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    border: none;
+    border-bottom: 1px solid rgb(236, 232, 232);
+    border-collapse: collapse;
+    padding: 5px;
 }
 
 .error-msg {
-  font-size: 2rem;
-  padding-top: 25px;
-  margin-top: 25px;
-  text-align: center;
+    font-size: 2rem;
+    padding-top: 25px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1199.98px) {
+    header {
+        text-align: left;
+    }
+    header h1 {
+        padding-left: 25px;
+    }
+    .wrapper .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767.98px) {
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header h1 {
+        font-size: 30px;
+    }
+    header span a {
+        padding: 0 15px;
+    }
+    .userGrid {
+        width: 45%;
+    }
+    .userGrid:last-child {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    header {
+        width: 100%;
+    }
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    header h1 {
+        font-size: 20px;
+        padding-left: 10px;
+    }
+    header span a {
+        font-size: 20px;
+    }
+    header span {
+        position: unset;
+    }
+    .userGrid {
+        width: 90%;
+    }
 }

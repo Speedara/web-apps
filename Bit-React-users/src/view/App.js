@@ -85,8 +85,8 @@ class App extends React.Component {
               </div>
               {
                 JSON.parse(localStorage.getItem("isGrid")) ?
-                  <GridStructure users={this.state.users} query={this.state.searchBar} error={this.ErrorMsg} /> :
-                  <UserLists users={this.state.users} query={this.state.searchBar} error={this.ErrorMsg} />
+                  <div className="container"> <GridStructure users={this.state.users} query={this.state.searchBar} error={this.ErrorMsg} /> </div> :
+                  <div className="container"> <UserLists users={this.state.users} query={this.state.searchBar} error={this.ErrorMsg} /> </div>
               }
             </div >
         }

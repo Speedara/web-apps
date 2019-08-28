@@ -8,7 +8,7 @@ class User {
         this.gender = gender;
     }
     hideEmail() {
-        return this.email.slice(0, 3) + "..." + this.email.slice(6, 26)
+        return this.email.slice(0, 3) + "..." + this.email.slice(12, 26)
     }
     setFullName() {
         return this.name[0].toUpperCase() + this.name.slice(1) + " " + this.last[0].toUpperCase() + this.last.slice(1)
